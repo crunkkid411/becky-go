@@ -1,0 +1,5 @@
+# Compiled binaries - built locally, not versioned
+bin/
+
+# Go module files (generated)
+go.sum
