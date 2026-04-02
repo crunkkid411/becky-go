@@ -382,7 +382,7 @@ Update this section every time an agent works on this project. Mark completed it
 - [x] `hairs-toolbelt/` cleaned of leftover Go files
 
 ### Active
-- [ ] Next Step - Create GitHub repo for `becky-go/` (separate from `hairs-toolbelt/`), push all files
+- [x] Next Step - Create GitHub repo for `becky-go/` (separate from `hairs-toolbelt/`), push all files — https://github.com/crunkkid411/becky-go
+- [x] Next Step - Update `hairs-toolbelt/` architecture docs to reference `becky-go/` naming
 - [ ] Next Step - Add `becky-go/bin/` to system PATH so `becky-status` works from any terminal
 - [ ] Next Step - Build `becky-ask` (LLM pipe tool using mods/fantasy)
-- [ ] Next Step - Update `hairs-toolbelt/` architecture docs to reference `becky-go/` naming
