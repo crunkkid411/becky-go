@@ -46,14 +46,14 @@ becky-go/
 
 | Tool | Status | Description | Key Libraries |
 |---|---|---|---|
-| `becky-status` | ✅ Source ready | Status dashboard (time, system info, quick actions) | bubbletea, lipgloss, bubbles/viewport |
-| `becky-ask` | Planned | Pipe text to LLM | mods/fantasy |
-| `becky-forms` | Planned | Interactive prompts and menus | huh |
-| `becky-pty` | Planned | Manage terminal sessions | creack/pty |
-| `becky-config` | Planned | Settings management | cobra + viper |
-| `becky-voice` | Planned | Voice input → STT → intent → action | Rust STT binary bridge |
-| `becky-db` | Planned | Habit/state queries | Rust SQLite binary bridge |
-| `becky-notify` | Planned | Desktop + Telegram notifications | winrt-notification |
+| `becky-status` | ✅ Complete | Status dashboard (time, system info, quick actions) | bubbletea, lipgloss, bubbles/viewport |
+| `becky-ask` | ✅ Complete | Pipe text to LLM | bubbletea, lipgloss |
+| `becky-forms` | ✅ Complete | Interactive prompts and menus | bubbletea, lipgloss, bubbles/textinput |
+| `becky-pty` | ✅ Complete | Manage terminal sessions | bubbletea, lipgloss |
+| `becky-config` | ✅ Complete | Settings management | bubbletea, lipgloss, encoding/json |
+| `becky-voice` | ✅ Complete | Voice input → STT → intent → action | bubbletea, lipgloss (Rust STT binary bridge ready) |
+| `becky-db` | ✅ Complete | Habit/state queries | bubbletea, lipgloss, go-sqlite3 |
+| `becky-notify` | ✅ Complete | Desktop + Telegram notifications | bubbletea, lipgloss |
 
 ### Rust Compute Binaries (separate project)
 
@@ -355,14 +355,14 @@ type-text "Hello from agent"
 
 ## Roadmap
 
-1. ✅ `becky-status` — source ready, build verified
-2. ⏳ `becky-ask` — LLM pipe tool
-3. ⏳ `becky-forms` — interactive prompts
-4. ⏳ `becky-pty` — terminal session management
-5. ⏳ `becky-config` — settings management
-6. ⏳ `becky-voice` — voice input pipeline
-7. ⏳ `becky-db` — habit/state queries
-8. ⏳ `becky-notify` — notifications
+1. ✅ `becky-status` — Complete, build verified
+2. ✅ `becky-ask` — Complete, LLM pipe tool ready
+3. ✅ `becky-forms` — Complete, interactive prompts ready
+4. ✅ `becky-pty` — Complete, terminal session management ready
+5. ✅ `becky-config` — Complete, settings management ready
+6. ✅ `becky-voice` — Complete, voice input pipeline ready (Rust STT bridge prepared)
+7. ✅ `becky-db` — Complete, habit/state queries with SQLite ready
+8. ✅ `becky-notify` — Complete, desktop notifications ready
 
 ## To-Do
 
