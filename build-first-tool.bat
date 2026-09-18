@@ -57,7 +57,9 @@ echo Binary: bin/becky-status.exe
 echo.
 echo Run it: bin\becky-status.exe
 echo.
-echo To add to PATH (run once as Administrator):
-echo   setx PATH "%%PATH%%;%CD%\bin"
+echo Do not edit PATH from here. The old "add to PATH" line in this script
+echo erased the whole user PATH (found 2026-09-17). Run tools by full path,
+echo or copy them into a folder already on PATH:
+echo   copy /y bin\*.exe "%%USERPROFILE%%\bin\"
 echo.
 pause

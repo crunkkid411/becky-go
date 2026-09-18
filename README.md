@@ -156,25 +156,30 @@ GOOS=linux GOARCH=amd64 go build -o bin/becky-status ./cmd/status
 GOOS=darwin GOARCH=amd64 go build -o bin/becky-status ./cmd/status
 ```
 
-## Adding to PATH (Critical)
+## Adding to PATH
 
-After building, add the `bin/` directory to your system PATH so any agent or terminal can call tools directly:
+**Do not use `setx` or `$env:Path` to change PATH.** The instructions that used to be here did
+both, and on 2026-09-17 they were found to have erased Jordan's entire user PATH. `setx` saves
+at most 1,024 characters, and in PowerShell it saves the literal text `%PATH%`. `$env:Path` is
+the user and system PATH combined, so writing it back duplicates or destroys entries.
 
-### Option 1: Via build script (recommended)
-
-The build script prints the exact command. Run it in an **Administrator** terminal:
+Nothing needs adding for the current becky: `X:\AI-2\becky-tools\becky-go\build-all-tools.bat`
+copies every `.exe` into a folder that is already on PATH. For this old copy, run tools by full
+path (`bin\becky-status.exe`) or copy them there:
 
 ```cmd
-setx PATH "%PATH%;C:\path\to\becky-go\bin"
+copy /y bin\*.exe "%USERPROFILE%\bin\"
 ```
 
-### Option 2: PowerShell (one-liner)
+If a folder truly has to be added, this is the only safe form. It reads the USER PATH from the
+registry first and appends one entry:
 
 ```powershell
-[Environment]::SetEnvironmentVariable("Path", $env:Path + ";C:\path\to\becky-go\bin", "Machine")
+$u = [Environment]::GetEnvironmentVariable('Path','User')
+[Environment]::SetEnvironmentVariable('Path', $u.TrimEnd(';') + ';C:\path\to\becky-go\bin', 'User')
 ```
 
-### Option 3: GUI
+### Or: the Windows settings screen (safe - adds one entry)
 
 1. Win+R → `sysdm.cpl` → Advanced → Environment Variables
 2. Under **System variables**, find `Path` → Edit → New
